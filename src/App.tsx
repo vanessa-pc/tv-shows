@@ -1,11 +1,11 @@
-import { greet } from "./utils/greet";
-import episodes from './episodes.json'
+import { EpisodeList } from "./components/Episodes";
+import episodes from "./episodes.json";
 
-console.log(`Imported ${episodes.length} episode(s)`);
-console.log(`First episode's name is ${episodes[0].name}`);
+// console.log(typeof(episodes))
+// console.log(episodes)
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return <EpisodeList episodes={episodes} />;
 }
 
 export default App;

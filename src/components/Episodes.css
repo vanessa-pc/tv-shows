@@ -1,0 +1,38 @@
+.episodes {
+  display: flex;
+  flex-direction: row, column;
+  flex-wrap: wrap;
+  /* justify-content: space-around;
+    align-content: space-around; */
+  background-color: bisque;
+  align-items: flex-start;
+}
+
+.episode {
+  /* order: 0; */
+  width: 300px;
+  height: auto;
+  margin: 5px;
+  background-color: rgb(204, 124, 124);
+  align-self: flex-start;
+  border-radius: 5px;
+}
+
+.title {
+  border: solid rgb(141, 45, 45) 2px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 0;
+  font-family: "Merienda", cursive;
+}
+
+.medium-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.summary {
+  padding: 2px 12px;
+  font-family: "Merienda", cursive;
+}
