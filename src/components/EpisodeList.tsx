@@ -1,25 +1,19 @@
+import { searchString } from "../utils/searchString";
+import { IEpisode } from "./IEpisode";
+import { useState } from "react";
+import { SearchBar } from "./SearchBar";
 
-interface IEpisode {
-  id: number;
-  url: string;
-  name: string;
-  season: number;
-  number: number;
-  type: string;
-  airdate: string;
-  airtime: string;
-  airstamp: string;
-  runtime: number;
-  image: {
-    medium: string;
-    original: string;
-  };
-  summary: string;
-  _links: { self: { href: string } };
-}
+
 
 export function EpisodeList(props: { episodes: Array<IEpisode> }): JSX.Element {
-  const { episodes } = props;
+
+    const { episodes } = props;
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('s');
+
+    const [searchText, setSearchText] = useState(query || "");
+
+    const searchResults = searchString(episodes, searchText);
 
   // const [ name, season, number, summary ] = episodes
   // const {image: {medium} = {}} = props.episodes
@@ -28,8 +22,9 @@ export function EpisodeList(props: { episodes: Array<IEpisode> }): JSX.Element {
   // console.log(props)
   return (
     <>
+    <SearchBar searchText={searchText} setSearchText={setSearchText} />
     <div className="episodes">
-      {episodes.map(function (item, index) {
+      {searchResults.map(function (item, index) {
         return (
           <>
             <div className="episode">

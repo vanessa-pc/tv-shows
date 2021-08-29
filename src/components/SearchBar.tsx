@@ -1,26 +1,31 @@
-import { useState } from "react";
-import episodes from "../../src/episodes.json";
+import episodes from '../../src/episodes.json'
 
-export function SearchBar(): JSX.Element {
-  const [searchText, setSearchText] = useState("");
+export function SearchBar(searchText: string, setSearchText: React.Dispatch<React.SetStateAction<string>>): JSX.Element {
+
+ 
   const totalEpisodes = episodes.length;
+
   const handleSearch = () => setSearchText("");
+
+
   return (
     <>
-      <input
+      <form className="search-results">
+      <input className="search-input"
+        type="text"
         value={searchText}
+        placeholder="Enter a keyword"
         onChange={(event) => {
           setSearchText(event.target.value);
         }}
       />
-      <button className="search-button" onClick={handleSearch}>
-        {" "}
-        Search!
+      {" "}
+      <label className="search-label">Displaying {}/{totalEpisodes} episodes</label>
+      {" "} 
+      <button className="search-button" onClick={handleSearch} type="submit">
+        Reset searchbar
       </button>
-      <p className="search-results">
-        Displaying {}/{totalEpisodes} episodes
-      </p>
-      <h1>Hello</h1>
+      </form>
     </>
   );
 }
