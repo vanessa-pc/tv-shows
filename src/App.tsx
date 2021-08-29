@@ -1,5 +1,5 @@
 import { EpisodeList } from "./components/EpisodeList";
-import { SearchBar } from "./components/SearchBar";
+
 import episodes from "./episodes.json";
 
 // console.log(typeof(episodes))
@@ -8,7 +8,7 @@ import episodes from "./episodes.json";
 function App(): JSX.Element {
   return (
     <>
-    <SearchBar episodes={episodes}/>
+    
     <EpisodeList episodes={episodes} />;
     </>)
 }

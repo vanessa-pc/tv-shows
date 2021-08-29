@@ -1,11 +1,7 @@
-import episodes from '../../src/episodes.json'
 
-export function SearchBar(searchText: string, setSearchText: React.Dispatch<React.SetStateAction<string>>): JSX.Element {
+export function SearchBar(props: {searchText: string, setSearchText: React.Dispatch<React.SetStateAction<string>>, results: number, totalEpisodes: number}): JSX.Element {
 
- 
-  const totalEpisodes = episodes.length;
-
-  const handleSearch = () => setSearchText("");
+  const handleSearch = () => props.setSearchText("");
 
 
   return (
@@ -13,14 +9,14 @@ export function SearchBar(searchText: string, setSearchText: React.Dispatch<Reac
       <form className="search-results">
       <input className="search-input"
         type="text"
-        value={searchText}
+        value={props.searchText}
         placeholder="Enter a keyword"
         onChange={(event) => {
-          setSearchText(event.target.value);
+          props.setSearchText(event.target.value);
         }}
       />
       {" "}
-      <label className="search-label">Displaying {}/{totalEpisodes} episodes</label>
+      <label className="search-label">Displaying {props.results}/{props.totalEpisodes} episodes</label>
       {" "} 
       <button className="search-button" onClick={handleSearch} type="submit">
         Reset searchbar

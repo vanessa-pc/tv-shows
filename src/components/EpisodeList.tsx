@@ -8,23 +8,23 @@ import { SearchBar } from "./SearchBar";
 export function EpisodeList(props: { episodes: Array<IEpisode> }): JSX.Element {
 
     const { episodes } = props;
-    const { search } = window.location;
-    const query = new URLSearchParams(search).get('s');
 
-    const [searchText, setSearchText] = useState(query || "");
+
+    const [searchText, setSearchText] = useState("");
 
     const searchResults = searchString(episodes, searchText);
+    const matches = searchResults.length > 0;
+
+    const noMatches = <p className="no-matches">No episodes were found that matched your query</p> 
 
   // const [ name, season, number, summary ] = episodes
-  // const {image: {medium} = {}} = props.episodes
-  // console.log(typeof(episodes))
-  // console.log(episodes)
-  // console.log(props)
+  // const {image: {medium} = {}} = episodes
+
   return (
     <>
-    <SearchBar searchText={searchText} setSearchText={setSearchText} />
-    <div className="episodes">
-      {searchResults.map(function (item, index) {
+    <SearchBar searchText= {searchText} setSearchText={setSearchText} results = {searchResults.length} totalEpisodes = {episodes.length} />
+    <div className="episodes"> 
+      { matches ? searchResults.map(function (item, index) {
         return (
           <>
             <div className="episode">
@@ -38,7 +38,7 @@ export function EpisodeList(props: { episodes: Array<IEpisode> }): JSX.Element {
             </div>
           </>
         );
-      })}
+      }): noMatches}
     </div>
   </>
   );
