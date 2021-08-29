@@ -1,3 +1,6 @@
+* {
+  margin: 0;
+}
 .episodes {
   display: flex;
   flex-direction: row, column;
@@ -5,14 +8,15 @@
   /* justify-content: space-around;
     align-content: space-around; */
   background-color: bisque;
-  align-items: flex-start;
+  /* align-items: flex-start; */
+  padding: 10px 0px 20px 130px;
 }
 
 .episode {
   /* order: 0; */
   width: 300px;
   height: auto;
-  margin: 5px;
+  margin: 10px;
   background-color: rgb(204, 124, 124);
   align-self: flex-start;
   border-radius: 5px;
