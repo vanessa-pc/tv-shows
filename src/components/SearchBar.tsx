@@ -7,7 +7,7 @@ export function SearchBar(props: {
   const handleSearch = () => props.setSearchText("");
 
   return (
-    <>
+    <div className="form">
       <form className="search-results">
         <input
           className="search-input"
@@ -25,6 +25,6 @@ export function SearchBar(props: {
           Reset searchbar
         </button>
       </form>
-    </>
+    </div>
   );
 }

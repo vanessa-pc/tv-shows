@@ -12,7 +12,7 @@ export function EpisodeList(props: { episodes: Array<IEpisode> }): JSX.Element {
   const matches = searchResults.length > 0;
 
   const noMatches = (
-    <p className="no-matches">No episodes were found that matched your query</p>
+    <p className="no-matches">No episodes were found that matched your query!</p>
   );
 
   // const [ name, season, number, summary ] = episodes

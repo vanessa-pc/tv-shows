@@ -5,7 +5,7 @@ export function searchString(episodes: IEpisode[], query: string): IEpisode[] {
     ? episodes
     : episodes.filter(
         (episode) =>
-          episode.summary.toLowerCase().includes(query.toLowerCase()) &&
+          episode.summary.toLowerCase().includes(query.toLowerCase()) ||
           episode.name.toLowerCase().includes(query.toLowerCase())
       );
 }
