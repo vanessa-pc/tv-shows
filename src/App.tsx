@@ -8,9 +8,9 @@ import episodes from "./episodes.json";
 function App(): JSX.Element {
   return (
     <>
-    
-    <EpisodeList episodes={episodes} />;
-    </>)
+      <EpisodeList episodes={episodes} />;
+    </>
+  );
 }
 
 export default App;
