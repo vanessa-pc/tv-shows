@@ -9,14 +9,18 @@ export function DropdownMenu(props: {
   return (
     <>
       <select
-        name="episodes"
-        id="episodes"
+        className="episodes-dropdown"
+        id="dropdown"
         onChange={(event) => setSearchText(event.target.value)}
       >
         <option placeholder="select an episode">Select an episode</option>
         {episodes.map(function (episode, index) {
           return (
-            <option key={index} value={episode.name}>
+            <option
+              key={index}
+              value={episode.name}
+              className="dropdown-options"
+            >
               S{String(episode.season).padStart(2, "0")}E
               {String(episode.number).padStart(2, "0")} - {episode.name}
             </option>

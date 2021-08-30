@@ -14,14 +14,16 @@ export function EpisodeList(props: { episodes: Array<IEpisode> }): JSX.Element {
 
   return (
     <>
-      <DropdownMenu episodes={episodes} setSearchText={setSearchText} />
-      <SearchBar
-        searchText={searchText}
-        setSearchText={setSearchText}
-        results={searchResults.length}
-        totalEpisodes={episodes.length}
-      />
-      <Episodes episodes={episodes} searchResults={searchResults} />
+      <div className="form">
+        <DropdownMenu episodes={episodes} setSearchText={setSearchText} />
+        <SearchBar
+          searchText={searchText}
+          setSearchText={setSearchText}
+          results={searchResults.length}
+          totalEpisodes={episodes.length}
+        />
+        <Episodes episodes={episodes} searchResults={searchResults} />
+      </div>
     </>
   );
 }
