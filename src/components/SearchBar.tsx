@@ -22,7 +22,7 @@ export function SearchBar(props: {
           Displaying {props.results}/{props.totalEpisodes} episodes
         </label>{" "}
         <button className="search-button" onClick={handleSearch} type="submit">
-          Reset searchbar
+          Back to full episode list
         </button>
       </form>
     </div>
