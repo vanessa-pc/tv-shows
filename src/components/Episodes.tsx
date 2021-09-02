@@ -26,11 +26,13 @@ export function Episodes(props: {
                     {episode.name} - S{String(episode.season).padStart(2, "0")}E
                     {String(episode.number).padStart(2, "0")}{" "}
                   </h2>
-                  { episode.image && <img
-                    className="medium-image"
-                    src={episode.image.medium}
-                    alt=""
-                  />}
+                  {episode.image && (
+                    <img
+                      className="medium-image"
+                      src={episode.image.medium}
+                      alt=""
+                    />
+                  )}
                   <p className="summary">
                     {episode.summary.replace(/<[^>]+>/g, "")}
                   </p>

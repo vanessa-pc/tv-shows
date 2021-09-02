@@ -6,7 +6,7 @@ import episodes from "./episodes.json";
 // console.log(episodes)
 
 function App(): JSX.Element {
-  return <EpisodeList episodes={episodes} />
+  return <EpisodeList episodes={episodes} />;
 }
 
 export default App;

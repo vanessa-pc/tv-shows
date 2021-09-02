@@ -6,9 +6,12 @@ import { DropdownMenu } from "./DropdownMenu";
 import { Episodes } from "./Episodes";
 import { useFetch } from "../utils/useFetch";
 
-export function EpisodeList({episodes}: { episodes: Array<IEpisode> }): JSX.Element {
-
-  episodes = useFetch("https://api.tvmaze.com/shows/82/episodes")
+export function EpisodeList({
+  episodes,
+}: {
+  episodes: Array<IEpisode>;
+}): JSX.Element {
+  episodes = useFetch("https://api.tvmaze.com/shows/82/episodes");
 
   const [searchText, setSearchText] = useState("");
 

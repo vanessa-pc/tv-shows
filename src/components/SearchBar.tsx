@@ -4,7 +4,6 @@ export function SearchBar(props: {
   results: number;
   totalEpisodes: number;
 }): JSX.Element {
-  
   const handleSearch = () => props.setSearchText("");
 
   return (
