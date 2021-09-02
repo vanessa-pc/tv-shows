@@ -1,5 +1,4 @@
 import { IEpisode } from "./IEpisode";
-import { image } from "../../src/images/mauricio-santos-N1gFsYf9AI0-unsplash"
 
 export function Episodes(props: {
   episodes: IEpisode[];
@@ -29,7 +28,7 @@ export function Episodes(props: {
                   </h2>
                   <img
                     className="medium-image"
-                    src={episode.image.medium || "https://images.unsplash.com/photo-1515255384510-23e8b6a6ca3c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80"}
+                    src={episode.image.medium || ''}
                     alt=""
                   />
                   <p className="summary">
