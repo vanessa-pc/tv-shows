@@ -9,9 +9,9 @@ export interface IEpisode {
   airtime: string;
   airstamp: string;
   runtime: number;
-  image: {
-    medium: string;
-    original: string;
+  image?: {
+    medium?: string;
+    original?: string;
   };
   summary: string;
   _links: { self: { href: string } };
