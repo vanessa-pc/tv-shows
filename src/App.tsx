@@ -1,11 +1,11 @@
-import { greet } from "./utils/greet";
-import episodes from "./episodes.json";
-
-console.log(`Imported ${episodes.length} episode(s)`);
-console.log(`First episode's name is ${episodes[0].name}`);
+import { EpisodeList } from "./components/EpisodeList";
+import "./components/Episodes.css";
+import { useFetch } from "./utils/useFetch";
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  const episodes = useFetch("https://api.tvmaze.com/shows/82/episodes");
+
+  return <EpisodeList episodes={episodes} />;
 }
 
 export default App;
