@@ -5,8 +5,7 @@ import { SearchBar } from "./SearchBar";
 import { DropdownMenu } from "./DropdownMenu";
 import { Episodes } from "./Episodes";
 
-export function EpisodeList(props: { episodes: Array<IEpisode> }): JSX.Element {
-  const { episodes } = props;
+export function EpisodeList({episodes}: { episodes: Array<IEpisode> }): JSX.Element {
 
   const [searchText, setSearchText] = useState("");
 
